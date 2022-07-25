@@ -1,0 +1,23 @@
+#--------------------------------------------------
+# Répertoire : /public/
+#--------------------------------------------------
+
+Options +FollowSymlinks
+
+RewriteEngine on
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+
+# Controller
+RewriteRule ^([a-zA-Z0-9]+)/$   public/index.php?page=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9]+)$   public/index.php?page=$1 [L,QSA]
+
+# Controller + Action
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$   public/index.php?page=$1&action=$2 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/$   public/index.php?page=$1&action=$2 [L,QSA]
+
+# Index
+RewriteRule ^$   public/index.php [L]
